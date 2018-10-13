@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<style type="text/css">
+		.btn{
+			width: 80px;
+			height: 80px;
+			font-size: 25px;
+			margin: 2;
+			cursor: pointer;
+			border-radius: 50px;
+			background:skyblue;
+
+
+		}
+		#text{
+			width: 333px;
+			margin: 5;
+			font-size: 35px;
+			padding: 16px;
+			border-radius: 3px;
+			background: #000655;
+			color: white;
+			text-align: right;
+			transition: 1s;
+		}
+		#text:hover{
+			transform: scale(1.5);
+
+		}
+		
+		.main{
+			position: absolute;
+			top: 10%;
+			left: 35%;
+			background: #000620;
+			padding: 20px;
+			border-radius: 5px;
+			/*box-shadow: (2px 2px 2px black);*/
+		}
+	</style>
+	
+	<script type="text/javascript">
+		function insert(num){
+			document.form.text.value += num;
+		}
+		function equal() {
+
+			var exp = document.form.text.value;
+			if(exp){
+				document.form.text.value = eval(exp);
+			}
+		}
+		function clean() {
+			document.form.text.value = "";
+		}
+		function power()
+		{
+			// var X="CASIO";
+			document.form.text.value =  "CASIO";
+		}
+	</script>
+</head> 
+<body><div class="main">
+<form name="form">
+	<input type="text" id="text" >
+</form><br>
+<input type="button" class="btn" value="C" onclick="clean()">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="." onclick="insert('.')">
+&nbsp&nbsp
+<input type="button" class="btn" value="AC" onclick="power()">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="+" onclick="insert('+')">
+<br><br>
+<input type="button" class="btn" value="7" onclick="insert(7)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="8" onclick="insert(8)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="9" onclick="insert(9)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="-" onclick="insert('-')">
+<br><br>
+<input type="button" class="btn" value="4" onclick="insert(4)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="5" onclick="insert(5)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="6" onclick="insert(6)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="X" onclick="insert('*')">
+<br><br>
+<input type="button" class="btn" value="1" onclick="insert(1)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="2" onclick="insert(2)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="3" onclick="insert(3)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="/" onclick="insert('/')">
+<br><br>
+<input type="button" class="btn" value="(" onclick="insert('(')">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="0" onclick="insert(0)">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value=")" onclick="insert(')')">&nbsp&nbsp&nbsp
+<input type="button" class="btn" value="=" onclick="equal()">
+
+
+</div>
+</body>
+</html>
